@@ -1,0 +1,153 @@
+{
+  "clearInfo": {
+    "clearUrl": "static/api/clear.json"
+  },
+  "homeInfo": {
+    "title": "首页",
+    "icon": "fa fa-home",
+    "href": "page/welcome-1.html?mpi=m-p-i-0"
+  },
+  "logoInfo": {
+    "title": "CRM-智能办公",
+    "image": "static/images/logo.png",
+    "href": ""
+  },
+  "menuInfo": {
+    "currency": {
+      "title": "系统菜单",
+      "icon": "fa fa-address-book",
+      "child": [
+        {
+          "title": "营销管理",
+          "href": "",
+          "icon": "fa fa-street-view",
+          "target": "_self",
+          "child": [
+            {
+              "title": "营销机会管理",
+              "href": "sale_chance/index",
+              "icon": "fa fa-tty",
+              "target": "_self"
+            },
+            {
+              "title": "客户开发计划",
+              "href": "sale_chance/index",
+              "icon": "fa fa-ellipsis-h",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "客户管理",
+          "href": "",
+          "icon": "fa fa-flag",
+          "target": "_self",
+          "child": [
+            {
+              "title": "客户信息管理",
+              "href": "sale_chance/index",
+              "icon": "fa fa-exchange",
+              "target": "_self"
+            },
+            {
+              "title": "客户流失管理",
+              "href": "sale_chance/index",
+              "icon": "fa fa-user-times",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "服务管理",
+          "href": "",
+          "icon": "fa fa-desktop",
+          "target": "_self",
+          "child": [
+            {
+              "title": "服务创建",
+              "href": "sale_chance/index",
+              "icon": "fa fa-tachometer",
+              "target": "_self"
+            },
+            {
+              "title": "服务分配",
+              "href": "sale_chance/index",
+              "icon": "fa fa-tachometer",
+              "target": "_self"
+            },
+            {
+              "title": "服务处理",
+              "href": "sale_chance/index",
+              "icon": "fa fa-tachometer",
+              "target": "_self"
+            },
+            {
+              "title": "服务反馈",
+              "href": "sale_chance/index",
+              "icon": "fa fa-tachometer",
+              "target": "_self"
+            },
+            {
+              "title": "服务归档",
+              "href": "sale_chance/index",
+              "icon": "fa fa-tachometer",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "基础数据管理",
+          "href": "",
+          "icon": "fa fa-home",
+          "target": "_self",
+          "child": [
+            {
+              "title": "字典管理",
+              "href": "sale_chance/index",
+              "icon": "fa fa-tachometer",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "系统设置",
+          "href": "sale_chance/index",
+          "icon": "fa fa-gears",
+          "target": "_self",
+          "child": [
+            {
+              "title": "密码修改",
+              "href": "sale_chance/index",
+              "icon": "fa fa-tachometer",
+              "target": "_self"
+            },
+            {
+              "title": "安全退出",
+              "href": "sale_chance/index",
+              "icon": "fa fa-tachometer",
+              "target": "_self"
+            },
+            {
+              "title": "用户管理",
+              "href": "user/index",
+              "icon": "fa fa-user",
+              "target": "_self"
+            },
+            {
+              "title": "角色管理",
+              "href": "sale_chance/index",
+              "icon": "fa fa-tachometer",
+              "target": "_self"
+            },
+            {
+              "title": "菜单管理",
+              "href": "sale_chance/index",
+              "icon": "fa fa-tachometer",
+              "target": "_self"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

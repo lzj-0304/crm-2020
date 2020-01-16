@@ -139,4 +139,13 @@
     </select>
 
 
+    <delete id="deleteBatch">
+        update t_user
+        set is_valid=0
+        where id in
+        <foreach collection="array" item="item" open="(" separator="," close=")">
+             #{item}
+        </foreach>
+    </delete>
+
 </mapper>

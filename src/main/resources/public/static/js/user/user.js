@@ -13,6 +13,7 @@ layui.use(['table','layer',"form"],function(){
         height : "full-125",
         limits : [10,15,20,25],
         limit : 20,
+        toolbar: "#toolbarDemo",
         id : "userListTable",
         cols : [[
             {type: "checkbox", fixed:"left", width:50},
@@ -45,54 +46,30 @@ layui.use(['table','layer',"form"],function(){
         })
     });
 
-
-    //打开添加用户页面
-    $(".addNews_btn").click(function(){
-        updateUser();
+    //头工具栏事件
+    table.on('toolbar(users)', function(obj){
+        var checkStatus = table.checkStatus(obj.config.id);
+        switch(obj.event){
+            case "add":
+                openAddOrUpdateUserDialog();
+                break;
+            case "del":
+                delUser(checkStatus.data);
+                break;
+        };
     });
-
-    // 批量删除操作
-    /*$(".delAll_btn").click(function () {
-        var checkStatus = table.checkStatus('userListTable');
-        if(checkStatus.data.length==0){
-            layer.msg("请选择待删除用户记录",{icon:5});
-        }else{
-            // 获取选中数据id
-            var ids=[];
-            var data = checkStatus.data;
-            for(var i=0;i<data.length;i++){
-               ids[i]=data[i].id;
-            }
-            console.log(ids);
-            layer.confirm('确定删除选中的用户?', {icon: 3, title: '用户管理'}, function (index) {
-                $.ajax({
-                    type:"post",
-                    url:ctx+"/user/del",
-                    data:{
-                       ids:ids
-                    },
-                    dataType:"json",
-                    success:function (data) {
-                        tableIns.reload();
-                        layer.close(index);
-                    }
-                })
-            })
-        }
-
-    });*/
 
 
     /**
      * 行监听
      */
-    table.on('tool(users)', function(obj){
+    table.on("tool(users)", function(obj){
         var layEvent = obj.event;
-        if(layEvent === 'edit') {
-            updateUser(obj.data.id);
-        }else if(layEvent === 'del') {
-            layer.confirm('确定删除当前用户？', {icon: 3, title: '用户管理'}, function (index) {
-                $.get(ctx+"/user/del",{userId:obj.data.id},function (data) {
+        if(layEvent === "edit") {
+            openAddOrUpdateUserDialog(obj.data.id);
+        }else if(layEvent === "del") {
+            layer.confirm('确定删除当前用户？', {icon: 3, title: "用户管理"}, function (index) {
+                $.post(ctx+"/user/delete",{id:obj.data.id},function (data) {
                         if(data.code==200){
                             layer.msg("操作成功！");
                             tableIns.reload();
@@ -106,19 +83,64 @@ layui.use(['table','layer',"form"],function(){
 
 
     // 打开添加用户页面
-    function updateUser(uid){
-        var url  =  ctx+"/user/userUpdate";
+    function openAddOrUpdateUserDialog(uid){
+        var url  =  ctx+"/user/addOrUpdateUserPage";
+        var title="用户管理-用户添加";
         if(uid){
-            url = url+"?uid="+uid;
+            url = url+"?id="+uid;
+            title="用户管理-用户更新";
         }
         layui.layer.open({
-            title : "用户管理-用户信息更新",
+            title : title,
             type : 2,
-            area:["750px","500px"],
+            area:["700px","420px"],
             maxmin:true,
             content : url
         });
     }
+
+
+    /**
+     * 批量删除
+     * @param datas
+     */
+    function delUser(datas) {
+        if(datas.length==0){
+            layer.msg("请选择删除记录!", {icon: 5});
+            return;
+        }
+
+        layer.confirm('确定删除选中的用户记录？', {
+            btn: ['确定','取消'] //按钮
+        }, function(index){
+            layer.close(index);
+            var ids= "ids=";
+            for(var i=0;i<datas.length;i++){
+                if(i<datas.length-1){
+                    ids=ids+datas[i].id+"&ids=";
+                }else {
+                    ids=ids+datas[i].id
+                }
+            }
+            $.ajax({
+                type:"post",
+                url:ctx+"/user/deleteBatch",
+                data:ids,
+                dataType:"json",
+                success:function (data) {
+                    if(data.code==200){
+                        tableIns.reload();
+                    }else{
+                        layer.msg(data.msg, {icon: 5});
+                    }
+                }
+            })
+        });
+
+
+    }
+
+
 
 
 });

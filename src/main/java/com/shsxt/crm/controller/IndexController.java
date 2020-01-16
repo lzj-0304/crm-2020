@@ -24,9 +24,6 @@ public class IndexController extends BaseController {
      */
     @RequestMapping("index")
     public String index(){
-        /*if(1==1){
-            throw  new ParamsException("参数异常...");
-        }*/
         return "index";
     }
 

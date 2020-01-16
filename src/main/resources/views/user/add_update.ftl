@@ -34,7 +34,7 @@
         <label class="layui-form-label">手机号</label>
         <div class="layui-input-block">
             <input type="text" class="layui-input userEmail"
-                   lay-verify="phone" name="phone" value="${(user.email)!}" id="phone" placeholder="请输入手机号">
+                   lay-verify="phone" name="phone" value="${(user.phone)!}" id="phone" placeholder="请输入手机号">
         </div>
     </div>
     <br/>

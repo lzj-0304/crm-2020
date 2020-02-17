@@ -8,7 +8,6 @@ window.rootPath = (function (src) {
     src = document.scripts[document.scripts.length - 1].src;
     return src.substring(0, src.lastIndexOf("/") + 1);
 })();
-
 layui.config({
     base: rootPath + "lay-module/",
     version: true
@@ -22,4 +21,6 @@ layui.config({
     echartsTheme: 'echarts/echartsTheme', // echarts图表主题扩展
     wangEditor: 'wangEditor/wangEditor', // wangEditor富文本扩展
     layarea: 'layarea/layarea', //  省市县区三级联动下拉选择器
+    jquery_cookie:'jquery-cookie/jquery.cookie',
+    bodyTab: "body/bodyTab"
 });

@@ -23,9 +23,6 @@ layui.use(['table','layer',"form"],function(){
                     return '<a class="layui-blue" href="mailto:'+d.email+'">'+d.email+'</a>';
                 }},
             {field: 'trueName', title: '真实姓名', align:'center'},
-            {field: 'isValid', title: '用户状态',  align:'center',templet:function(d){
-                    return d.isValid == "1" ? "启用" : "禁用";
-                }},
             {field: 'createDate', title: '创建时间', align:'center',minWidth:150},
             {field: 'updateDate', title: '更新时间', align:'center',minWidth:150},
             {title: '操作', minWidth:150, templet:'#userListBar',fixed:"right",align:"center"}
@@ -55,6 +52,9 @@ layui.use(['table','layer',"form"],function(){
                 break;
             case "del":
                 delUser(checkStatus.data);
+                break;
+            case "relationRole":
+                openRelationRoleDialog(checkStatus.data);
                 break;
         };
     });
@@ -139,8 +139,6 @@ layui.use(['table','layer',"form"],function(){
 
 
     }
-
-
 
 
 });

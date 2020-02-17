@@ -2,6 +2,7 @@
 <html>
 <head>
     <#include "../common.ftl">
+    <link rel="stylesheet" href="${ctx}/static/css/formSelects-v4.css" media="all">
 </head>
 <body class="childrenBody">
 <form class="layui-form" style="width:80%;">
@@ -37,6 +38,16 @@
                    lay-verify="phone" name="phone" value="${(user.phone)!}" id="phone" placeholder="请输入手机号">
         </div>
     </div>
+
+    <div class="magb15 layui-col-md4 layui-col-xs12">
+        <label class="layui-form-label">角色</label>
+        <div class="layui-input-block">
+            <select name="roleIds"  xm-select="selectId">
+            </select>
+        </div>
+    </div>
+
+
     <br/>
     <div class="layui-form-item layui-row layui-col-xs12">
         <div class="layui-input-block">

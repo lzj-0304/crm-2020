@@ -26,14 +26,6 @@
 				<a class="layui-btn search_btn" data-type="reload"><i
 							class="layui-icon">&#xe615;</i> 搜索</a>
 			</div>
-			<#--<div class="layui-inline">
-				<a class="layui-btn layui-btn-normal addNews_btn"><i
-							class="layui-icon">&#xe608;</i>  添加用户</a>
-			</div>
-			<div class="layui-inline">
-				<a class="layui-btn layui-btn-normal delNews_btn"><i
-							class="layui-icon">&#xe608;</i> 删除用户</a>
-			</div>-->
 		</form>
 	</blockquote>
 	<table id="userList" class="layui-table"  lay-filter="users"></table>
@@ -49,9 +41,6 @@
 				<i class="layui-icon">&#xe608;</i>
 				删除用户
 			</a>
-			<#--<button class="layui-btn layui-btn-sm" lay-event="getCheckData">获取选中行数据</button>
-			<button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button>
-			<button class="layui-btn layui-btn-sm" lay-event="isAll">验证是否全选</button>-->
 		</div>
 	</script>
 	<!--操作-->

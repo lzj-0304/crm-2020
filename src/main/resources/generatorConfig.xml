@@ -23,7 +23,7 @@
 
 
         <!--生成Model类存放位置-->
-        <javaModelGenerator targetPackage="com.shsxt.crm.vo" targetProject="C:\java\idea_33\shsxt_crm\src\main\java">
+        <javaModelGenerator targetPackage="com.xxxx.crm.vo" targetProject="C:\java\idea_33\shsxt_crm\src\main\java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
@@ -36,7 +36,7 @@
 
 
         <!--生成Dao类存放位置-->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.shsxt.crm.dao" targetProject="C:\java\idea_33\shsxt_crm\src\main\java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.xxxx.crm.dao" targetProject="C:\java\idea_33\shsxt_crm\src\main\java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 

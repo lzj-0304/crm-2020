@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.shsxt.crm.dao.UserMapper">
-    <resultMap id="BaseResultMap" type="com.shsxt.crm.vo.User">
+<mapper namespace="com.xxxx.crm.dao.UserMapper">
+    <resultMap id="BaseResultMap" type="com.xxxx.crm.vo.User">
         <id column="id" property="id" jdbcType="INTEGER"/>
         <result column="user_name" property="userName" jdbcType="VARCHAR"/>
         <result column="user_pwd" property="userPwd" jdbcType="VARCHAR"/>
@@ -23,13 +23,13 @@
     </select>
 
 
-    <select id="queryUserByUserName" parameterType="string" resultType="com.shsxt.crm.vo.User">
+    <select id="queryUserByUserName" parameterType="string" resultType="com.xxxx.crm.vo.User">
         select
         <include refid="Base_Column_List"/>
         from t_user
         where is_valid=1 and user_name=#{userName}
     </select>
-    <insert id="insertSelective" parameterType="com.shsxt.crm.vo.User">
+    <insert id="insertSelective" parameterType="com.xxxx.crm.vo.User" useGeneratedKeys="true" keyProperty="id">
         insert into t_user
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">
@@ -90,7 +90,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="com.shsxt.crm.vo.User">
+    <update id="updateByPrimaryKeySelective" parameterType="com.xxxx.crm.vo.User">
         update t_user
         <set>
             <if test="userName != null">
@@ -120,7 +120,7 @@
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>
-    <select id="selectByParams" parameterType="com.shsxt.crm.query.UserQuery" resultType="com.shsxt.crm.vo.User">
+    <select id="selectByParams" parameterType="com.xxxx.crm.query.UserQuery" resultType="com.xxxx.crm.vo.User">
         select
         <include refid="Base_Column_List"/>
         from t_user

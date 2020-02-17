@@ -1,27 +1,41 @@
-layui.use(['form'], function () {
+layui.use(['form','jquery','jquery_cookie'], function () {
     var form = layui.form,
-        layer = layui.layer;
-
-    // 登录过期的时候，跳出ifram框架
-    if (top.location != self.location) top.location = self.location;
-
+        layer = layui.layer,
+        $ = layui.jquery,
+        $ = layui.jquery_cookie($);
     // 进行登录操作
     form.on('submit(login)', function (data) {
         data = data.field;
-        if (data.username == '') {
+        if ( data.username =="undefined" || data.username =="" || data.username.trim()=="") {
             layer.msg('用户名不能为空');
             return false;
         }
-        if (data.password == '') {
+        if ( data.password =="undefined" || data.password =="" || data.password.trim()=="")  {
             layer.msg('密码不能为空');
             return false;
         }
-        if (data.captcha == '') {
-            layer.msg('验证码不能为空');
-            return false;
-        }
-        layer.msg('登录成功', function () {
-            window.location = 'main';
+
+        $.ajax({
+            type:"post",
+            url:ctx+"/user/login",
+            data:{
+                userName:data.username,
+                userPwd:data.password
+            },
+            dataType:"json",
+            success:function (data) {
+                if(data.code==200){
+                    layer.msg('登录成功', function () {
+                        var result =data.result;
+                        $.cookie("userIdStr",result.userIdStr);
+                        $.cookie("userName",result.userName);
+                        $.cookie("trueName",result.trueName);
+                        window.location.href=ctx+"/main";
+                    });
+                }else{
+                    layer.msg(data.msg);
+                }
+            }
         });
         return false;
     });

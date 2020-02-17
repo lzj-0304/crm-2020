@@ -5,7 +5,7 @@
   "homeInfo": {
     "title": "首页",
     "icon": "fa fa-home",
-    "href": "page/welcome-1.html?mpi=m-p-i-0"
+    "href": "welcome"
   },
   "logoInfo": {
     "title": "CRM-智能办公",
@@ -116,18 +116,6 @@
           "target": "_self",
           "child": [
             {
-              "title": "密码修改",
-              "href": "sale_chance/index",
-              "icon": "fa fa-tachometer",
-              "target": "_self"
-            },
-            {
-              "title": "安全退出",
-              "href": "sale_chance/index",
-              "icon": "fa fa-tachometer",
-              "target": "_self"
-            },
-            {
               "title": "用户管理",
               "href": "user/index",
               "icon": "fa fa-user",
@@ -135,7 +123,7 @@
             },
             {
               "title": "角色管理",
-              "href": "sale_chance/index",
+              "href": "role/index",
               "icon": "fa fa-tachometer",
               "target": "_self"
             },

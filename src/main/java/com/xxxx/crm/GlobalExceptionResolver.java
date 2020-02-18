@@ -20,8 +20,6 @@ public class GlobalExceptionResolver implements HandlerExceptionResolver {
 
     @Override
     public ModelAndView resolveException(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) {
-
-
         /**
          * 首先判断异常类型
          *   如果异常类型为未登录异常  执行视图转发

@@ -186,10 +186,10 @@
 
 
   <select id="selectByParams" parameterType="com.xxxx.crm.query.SaleChanceQuery" resultType="com.xxxx.crm.vo.SaleChance">
-      select <include refid="Base_Column_List"/>
-      from t_sale_chance
+      select s.*,u.user_name as uname
+      from t_sale_chance s left join t_user u on s.assign_man=u.id
       <where>
-           is_valid=1
+           s.is_valid=1
            <if test="null!=customerName and customerName !='' ">
                and customer_name like concat('%',#{customerName},'%')
            </if>
@@ -199,6 +199,12 @@
            <if test="null !=state and state !=''">
               and state =#{state}
            </if>
+          <if test="null !=aggsinMan">
+              and assign_man =#{aggsinMan}
+          </if>
+          <if test="null !=devResult">
+              and dev_result =#{devResult}
+          </if>
       </where>
   </select>
 

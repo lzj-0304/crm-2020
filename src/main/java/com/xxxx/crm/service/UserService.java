@@ -230,5 +230,10 @@ public class UserService  extends BaseService<User,Integer> {
     }
 
 
+    public List<Map<String,Object>> queryAllCustomerManager(){
+        return userMapper.queryAllCustomerManager();
+    }
+
+
 
 }

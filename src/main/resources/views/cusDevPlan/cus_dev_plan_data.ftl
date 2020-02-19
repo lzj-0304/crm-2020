@@ -88,14 +88,16 @@
 				</a>
 			</div>
 		</script>
+
+		<!--操作-->
+		<script id="cusDevPlanListBar" type="text/html">
+			<a class="layui-btn layui-btn-xs" id="edit" lay-event="edit">编辑</a>
+			<a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="del">删除</a>
+		</script>
 	</#if>
 
 
-	<!--操作-->
-	<script id="cusDevPlanListBar" type="text/html">
-		<a class="layui-btn layui-btn-xs" id="edit" lay-event="edit">编辑</a>
-		<a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="del">删除</a>
-	</script>
+
 	<script type="text/javascript" src="${ctx}/static/js/cusDevPlan/cus.dev.plan.data.js"></script>
 </body>
 </html>

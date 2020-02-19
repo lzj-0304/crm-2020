@@ -1,29 +1,35 @@
-layui.use(['table','layer',"form", 'element'],function(){
+layui.use(['table','layer',"form"],function(){
     var layer = parent.layer === undefined ? layui.layer : top.layer,
         $ = layui.jquery,
         table = layui.table,
         form = layui.form;
-        element= layui.element;
-    //用户列表展示
+    //订单列表展示
     var  tableIns = table.render({
-        elem: '#cusDevPlanList',
-        url : ctx+'/cus_dev_plan/list?sid='+$("input[name='id']").val(),
+        elem: '#customerOrderList',
+        url : ctx+'/order/list?cid='+$("input[name='id']").val(),
         cellMinWidth : 95,
         page : true,
         height : "full-125",
         limits : [10,15,20,25],
         limit : 10,
         toolbar: "#toolbarDemo",
-        id : "cusDevPlanListTable",
+        id : "customerOrderListTable",
         cols : [[
             {type: "checkbox", fixed:"center"},
             {field: "id", title:'编号',fixed:"true"},
-            {field: 'planItem', title: '计划项',align:"center"},
-            {field: 'exeAffect', title: '执行效果',align:"center"},
-            {field: 'planDate', title: '执行时间',align:"center"},
+            {field: 'orderNo', title: '订单编号',align:"center"},
+            {field: 'orderDate', title: '下单日期',align:"center"},
+            {field: 'address', title: '收货地址',align:"center"},
+            {field: 'state', title: '支付状态',align:"center",templet:function (d) {
+                    if(d.state==1){
+                        return "已支付;"
+                    }else{
+                        return "未支付";
+                    }
+                }},
             {field: 'createDate', title: '创建时间',align:"center"},
             {field: 'updateDate', title: '更新时间',align:"center"},
-            {title: '操作',fixed:"right",align:"center", minWidth:150,templet:"#cusDevPlanListBar"}
+            {title: '操作',fixed:"right",align:"center", minWidth:150,templet:"#customerOrderListBar"}
         ]]
     });
 
@@ -36,21 +42,16 @@ layui.use(['table','layer',"form", 'element'],function(){
      */
     table.on("tool(customerOrders)", function(obj){
         var layEvent = obj.event;
-        if(layEvent === "info") {
-            openAddOrUpdateCusDevPlanDialog(obj.data.id);
+        if(layEvent == "info") {
+            openOrderDetailDialog(obj.data.id);
         }
 
     });
     // 打开添加计划项数据页面
-    function openAddOrUpdateCusDevPlanDialog(id){
-        var url  =  ctx+"/cus_dev_plan/addOrUpdateCusDevPlanPage?sid="+$("input[name='id']").val();
-        var title="计划项管理-添加计划项";
-        if(id){
-            url = url+"&id="+id;
-            title="计划项管理-更新计划项";
-        }
+    function openOrderDetailDialog(id){
+        var url  =  ctx+"/customer/orderDetailPage?orderId="+id;
         layui.layer.open({
-            title : title,
+            title : "订单详情查看",
             type : 2,
             area:["700px","400px"],
             maxmin:true,

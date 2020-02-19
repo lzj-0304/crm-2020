@@ -85,9 +85,6 @@ layui.use(['table','layer',"form", 'element'],function(){
             case "del":
                 delSaleChance(checkStatus.data);
                 break;
-            case "relationRole":
-                openRelationRoleDialog(checkStatus.data);
-                break;
         };
     });
 

@@ -10,13 +10,9 @@
 <div class="layui-tab-item layui-show">
     <div class="layui-carousel" id="test10" align="center">
         <div carousel-item="">
-            <div><img src="${ctx}/static/images/2.png"></div>
-            <div><img src="${ctx}/static/images/3.png"></div>
-            <div><img src="${ctx}/static/images/4.png"></div>
-            <div><img src="${ctx}/static/images/5.png"></div>
-            <div><img src="${ctx}/static/images/6.png"></div>
-            <div><img src="${ctx}/static/images/7.png"></div>
-            <div><img src="${ctx}/static/images/4.png"></div>
+            <div><img src="${ctx}/static/images/m01.png"></div>
+            <div><img src="${ctx}/static/images/m02.png"></div>
+            <div><img src="${ctx}/static/images/m03.png"></div>
         </div>
     </div>
 </div>

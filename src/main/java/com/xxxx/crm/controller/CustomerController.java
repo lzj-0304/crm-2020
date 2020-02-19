@@ -98,4 +98,14 @@ public class CustomerController extends BaseController {
     public Map<String,Object> countCustomerMake02(){
         return customerService.countCustomerMake02();
     }
+
+
+    /**
+     * 客户贡献分析
+     */
+    @RequestMapping("queryCustomerContributionByParams")
+    @ResponseBody
+    public Map<String,Object> queryCustomerContributionByParams(CustomerQuery customerQuery){
+        return customerService.queryCustomerContributionByParams(customerQuery);
+    }
 }

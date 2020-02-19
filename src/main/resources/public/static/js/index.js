@@ -30,6 +30,13 @@ layui.use(['form','jquery','jquery_cookie'], function () {
                         $.cookie("userIdStr",result.userIdStr);
                         $.cookie("userName",result.userName);
                         $.cookie("trueName",result.trueName);
+                        // 如果点击记住我 设置cookie 过期时间7天
+                        if($("input[type='checkbox']").is(':checked')){
+                            // 写入cookie 7天
+                            $.cookie("userIdStr",result.userIdStr, { expires: 7 });
+                            $.cookie("userName",result.userName, { expires: 7 });
+                            $.cookie("trueName",result.trueName, { expires: 7 });
+                        }
                         window.location.href=ctx+"/main";
                     });
                 }else{

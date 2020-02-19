@@ -170,4 +170,17 @@ public class CustomerService extends BaseService<Customer,Integer> {
         result.put("data2",data2List);
         return result;
     }
+
+
+    public Map<String,Object> queryCustomerContributionByParams(CustomerQuery customerQuery){
+        Map<String,Object> result =new HashMap<String,Object>();
+        PageHelper.startPage(customerQuery.getPage(),customerQuery.getLimit());
+        List<Map<String,Object>> list = customerMapper.queryCustomerContributionByParams(customerQuery);
+        PageInfo<Map<String,Object>> pageInfo = new PageInfo<Map<String,Object>>(list);
+        result.put("count",pageInfo.getTotal());
+        result.put("data",pageInfo.getList());
+        result.put("code",0);
+        result.put("msg","");
+        return result;
+    }
 }

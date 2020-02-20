@@ -7,6 +7,7 @@
 <form class="layui-form" style="width:80%;">
     <input name="id" type="hidden" value="${customerServe.id}"/>
     <input name="state" type="hidden" value="fw_004"/>
+    <input name="man" type="hidden" value="${customerServe.assigner}"/>
     <div class="layui-form-item layui-row">
         <div class="layui-col-xs6">
             <label class="layui-form-label">服务类型</label>
@@ -46,10 +47,11 @@
     <div class="layui-form-item layui-row">
         <div class="layui-col-xs6">
             <label class="layui-form-label">指派给</label>
-            <#--<div class="layui-input-block">
-                <select name="assigner"  xm-select="selectId" xm-select-radio>
+            <div class="layui-input-block">
+                <select name="assigner" id="assigner" disabled="disabled">
+                    <option value="">请选择</option>
                 </select>
-            </div>-->
+            </div>
         </div>
         <div class="layui-col-xs6">
             <label class="layui-form-label">指派时间</label>
@@ -65,7 +67,7 @@
         <div class="layui-col-xs6">
             <label class="layui-form-label">处理内容</label>
             <div class="layui-input-block">
-                <textarea  name="serviceProce" class="layui-textarea" >${customerServe.serviceProce}</textarea>
+                <textarea  name="serviceProce" class="layui-textarea" readonly="readonly" >${customerServe.serviceProce}</textarea>
             </div>
         </div>
         <div class="layui-col-xs6">

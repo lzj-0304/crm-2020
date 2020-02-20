@@ -8,6 +8,7 @@
 <form class="layui-form" style="width:80%;">
     <input name="id" type="hidden" value="${customerServe.id}"/>
     <input name="state" type="hidden" value="fw_003"/>
+    <input name="man" type="hidden" value="${customerServe.assigner}"/>
     <div class="layui-form-item layui-row">
         <div class="layui-col-xs6">
             <label class="layui-form-label">服务类型</label>
@@ -46,11 +47,12 @@
 
     <div class="layui-form-item layui-row">
         <div class="layui-col-xs6">
-            <label class="layui-form-label">指派给</label>
-            <#--<div class="layui-input-block">
-                <select name="assigner"  xm-select="selectId" xm-select-radio>
+            <label class="layui-form-label">指派人</label>
+            <div class="layui-input-block">
+                <select name="assigner" id="assigner" disabled="disabled">
+                    <option value="">请选择</option>
                 </select>
-            </div>-->
+            </div>
         </div>
         <div class="layui-col-xs6">
             <label class="layui-form-label">指派时间</label>

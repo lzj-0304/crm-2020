@@ -1,21 +1,16 @@
-layui.config({
-    base : ctx+"/static/js/"
-}).extend({
-    "formSelects":"formSelects-v4"
-});
-layui.use(['form', 'layer','formSelects'], function () {
+layui.use(['form', 'layer'], function () {
     var form = layui.form,
         layer = parent.layer === undefined ? layui.layer : top.layer,
-        $ = layui.jquery,
-        formSelects = layui.formSelects;
+        $ = layui.jquery;
 
 
-    formSelects.config('selectId',{
-        type:"post",
-        searchUrl:ctx+"/user/queryAllCustomerManager",
-        keyName: 'name',            //自定义返回数据中name的key, 默认 name
-        keyVal: 'id'            //自定义返回数据中value的key, 默认 value
-    },true);
+    $.post(ctx+"/user/queryAllCustomerManager",function (res) {
+        for (var i = 0; i < res.length; i++) {
+                $("#assigner").append("<option value=\"" + res[i].id + "\">" + res[i].name + "</option>");
+        }
+        //重新渲染
+        layui.form.render("select");
+    });
 
     form.on("submit(addOrUpdateCustomerServe)", function (data) {
         var index = top.layer.msg('数据提交中，请稍候', {icon: 16, time: false, shade: 0.8});

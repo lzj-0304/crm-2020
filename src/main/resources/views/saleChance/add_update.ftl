@@ -2,11 +2,11 @@
 <html>
 <head>
     <#include "../common.ftl">
-    <link rel="stylesheet" href="${ctx}/static/css/formSelects-v4.css" media="all">
 </head>
 <body class="childrenBody">
 <form class="layui-form" style="width:80%;">
     <input name="id" type="hidden" value="${(saleChance.id)!}"/>
+    <input name="man" type="hidden" value="${(saleChance.assignMan)!}"/>
     <div class="layui-form-item layui-row layui-col-xs12">
         <label class="layui-form-label">客户名称</label>
         <div class="layui-input-block">
@@ -60,7 +60,8 @@
     <div class="layui-form-item layui-row layui-col-xs12">
         <label class="layui-form-label">指派给</label>
         <div class="layui-input-block">
-            <select name="assignMan"  xm-select="selectId" xm-select-radio>
+            <select name="assignMan" id="assignMan">
+                <option value="">请选择</option>
             </select>
         </div>
     </div>

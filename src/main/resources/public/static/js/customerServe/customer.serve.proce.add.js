@@ -5,6 +5,18 @@ layui.use(['form', 'layer','jquery_cookie'], function () {
         $ = layui.jquery_cookie($);
 
 
+    $.post(ctx+"/user/queryAllCustomerManager",function (res) {
+        for (var i = 0; i < res.length; i++) {
+            if($("input[name='man']").val() == res[i].id ){
+                $("#assigner").append("<option value=\"" + res[i].id + "\" selected='selected' >" + res[i].name + "</option>");
+            }else {
+                $("#assigner").append("<option value=\"" + res[i].id + "\">" + res[i].name + "</option>");
+            }
+        }
+        //重新渲染
+        layui.form.render("select");
+    });
+
     form.on("submit(addOrUpdateCustomerServe)", function (data) {
         var index = top.layer.msg('数据提交中，请稍候', {icon: 16, time: false, shade: 0.8});
         data.field.serviceProcePeople=$.cookie("trueName");

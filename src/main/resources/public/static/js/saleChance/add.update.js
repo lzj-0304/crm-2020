@@ -1,22 +1,22 @@
-layui.config({
-    base : ctx+"/static/js/"
-}).extend({
-    "formSelects":"formSelects-v4"
-});
-layui.use(['form', 'layer','formSelects'], function () {
+layui.use(['form', 'layer'], function () {
     var form = layui.form,
         layer = parent.layer === undefined ? layui.layer : top.layer,
         $ = layui.jquery;
-    formSelects = layui.formSelects;
 
 
 
-    formSelects.config('selectId',{
-        type:"post",
-        searchUrl:ctx+"/user/queryAllCustomerManager",
-        keyName: 'name',            //自定义返回数据中name的key, 默认 name
-        keyVal: 'id'            //自定义返回数据中value的key, 默认 value
-    },true);
+    $.post(ctx+"/user/queryAllCustomerManager",function (res) {
+        for (var i = 0; i < res.length; i++) {
+            if($("input[name='man']").val() == res[i].id ){
+                $("#assignMan").append("<option value=\"" + res[i].id + "\" selected='selected' >" + res[i].name + "</option>");
+            }else {
+                $("#assignMan").append("<option value=\"" + res[i].id + "\">" + res[i].name + "</option>");
+            }
+
+        }
+        //重新渲染
+        layui.form.render("select");
+    });
 
 
     form.on("submit(addOrUpdateSaleChance)", function (data) {

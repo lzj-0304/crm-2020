@@ -50,7 +50,7 @@ function zTreeOnCheck(event, treeId, treeNode) {
                 mids=mids+nodes[i].id;
             }
         }
-        $.ajax({
+    $.ajax({
             type:"post",
             url:ctx+"/role/addGrant",
             data:mids+"&roleId="+roleId,

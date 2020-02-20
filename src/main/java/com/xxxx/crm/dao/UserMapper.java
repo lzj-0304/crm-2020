@@ -11,4 +11,6 @@ public interface UserMapper extends BaseMapper<User,Integer> {
     User  queryUserByUserName(String userName);
 
     public List<Map<String,Object>> queryAllCustomerManager();
+
+    List<Map<String, Object>> queryAllSales(Integer sid);
 }

@@ -5,7 +5,6 @@ import com.xxxx.crm.model.ResultInfo;
 import com.xxxx.crm.query.CustomerRepQuery;
 import com.xxxx.crm.service.CustomerLossService;
 import com.xxxx.crm.service.CustomerRepService;
-import com.xxxx.crm.vo.Customer;
 import com.xxxx.crm.vo.CustomerRep;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,8 +1,7 @@
 layui.use(['table','layer',"form"],function(){
        var layer = parent.layer === undefined ? layui.layer : top.layer,
         $ = layui.jquery,
-        table = layui.table,
-        form = layui.form;
+        table = layui.table;
 
     //角色列表展示
     var  tableIns = table.render({
@@ -45,8 +44,6 @@ layui.use(['table','layer',"form"],function(){
             case "add":
                 openAddOrUpdateRoleDialog();
                 break;
-            case "del":
-                delRole(checkStatus.data);
                 break;
             case "grant":
                 openAddGrantDailog(checkStatus.data);
@@ -95,45 +92,7 @@ layui.use(['table','layer',"form"],function(){
     }
 
 
-    /**
-     * 批量删除
-     * @param datas
-     */
-    function delUser(datas) {
-        if(datas.length==0){
-            layer.msg("请选择删除记录!", {icon: 5});
-            return;
-        }
 
-        layer.confirm('确定删除选中的角色记录？', {
-            btn: ['确定','取消'] //按钮
-        }, function(index){
-            layer.close(index);
-            var ids= "ids=";
-            for(var i=0;i<datas.length;i++){
-                if(i<datas.length-1){
-                    ids=ids+datas[i].id+"&ids=";
-                }else {
-                    ids=ids+datas[i].id
-                }
-            }
-            $.ajax({
-                type:"post",
-                url:ctx+"/role/deleteBatch",
-                data:ids,
-                dataType:"json",
-                success:function (data) {
-                    if(data.code==200){
-                        tableIns.reload();
-                    }else{
-                        layer.msg(data.msg, {icon: 5});
-                    }
-                }
-            })
-        });
-
-
-    }
 
 
 

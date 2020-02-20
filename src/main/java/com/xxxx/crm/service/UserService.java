@@ -234,6 +234,10 @@ public class UserService  extends BaseService<User,Integer> {
         return userMapper.queryAllCustomerManager();
     }
 
+    public List<Map<String,Object>> queryAllSales(Integer sid){
+        return userMapper.queryAllSales(sid);
+    }
+
 
 
 }

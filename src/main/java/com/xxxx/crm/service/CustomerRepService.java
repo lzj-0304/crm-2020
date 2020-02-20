@@ -1,6 +1,7 @@
 package com.xxxx.crm.service;
 
 import com.xxxx.base.BaseService;
+import com.xxxx.crm.service.CustomerLossService;
 import com.xxxx.crm.utils.AssertUtil;
 import com.xxxx.crm.vo.CustomerRep;
 import org.apache.commons.lang3.StringUtils;

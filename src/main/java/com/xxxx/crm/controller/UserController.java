@@ -119,4 +119,12 @@ public class UserController extends BaseController {
     }
 
 
+
+    @RequestMapping("queryAllSales")
+    @ResponseBody
+    public List<Map<String,Object>> queryAllSales(Integer sid){
+        return userService.queryAllSales(sid);
+    }
+
+
 }

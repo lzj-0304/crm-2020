@@ -69,8 +69,6 @@
 		<table id="cusDevPlanList" class="layui-table"  lay-filter="cusDevPlans"></table>
 	</div>
 
-
-
 	<#if saleChance.devResult==0 || saleChance.devResult==1>
 		<script type="text/html" id="toolbarDemo">
 			<div class="layui-btn-container">
@@ -95,8 +93,6 @@
 			<a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="del">删除</a>
 		</script>
 	</#if>
-
-
 
 	<script type="text/javascript" src="${ctx}/static/js/cusDevPlan/cus.dev.plan.data.js"></script>
 </body>

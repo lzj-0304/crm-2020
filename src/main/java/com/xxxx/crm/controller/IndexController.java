@@ -11,6 +11,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
+
 @Controller
 public class IndexController extends BaseController {
 
@@ -22,7 +23,7 @@ public class IndexController extends BaseController {
     private PermissionService permissionService;
 
     /**
-     * 登录页
+     * 系统登录页
      * @return
      */
     @RequestMapping("index")

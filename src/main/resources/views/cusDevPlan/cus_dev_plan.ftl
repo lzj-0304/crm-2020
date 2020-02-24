@@ -5,7 +5,6 @@
 	<#include "../common.ftl">
 </head>
 <body class="childrenBody">
-
 <form class="layui-form" >
 	<blockquote class="layui-elem-quote quoteBox">
 		<form class="layui-form">
@@ -48,8 +47,6 @@
 			<a href="javascript:;" class="layui-btn layui-btn-normal layui-btn-xs"  lay-event="info">详情</a>
 		{{# } }}
 	</script>
-
-
 
 </form>
 <script type="text/javascript" src="${ctx}/static/js/cusDevPlan/cus.dev.plan.js"></script>

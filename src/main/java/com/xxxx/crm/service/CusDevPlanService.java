@@ -31,7 +31,6 @@ public class CusDevPlanService extends BaseService<CusDevPlan,Integer> {
         cusDevPlan.setIsValid(1);
         cusDevPlan.setCreateDate(new Date());
         cusDevPlan.setUpdateDate(new Date());
-
         AssertUtil.isTrue(insertSelective(cusDevPlan)<1,"计划项记录添加失败!");
     }
 

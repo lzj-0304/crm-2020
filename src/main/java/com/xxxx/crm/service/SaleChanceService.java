@@ -8,6 +8,8 @@ import com.xxxx.crm.enums.DevResult;
 import com.xxxx.crm.enums.StateStatus;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 
@@ -91,6 +93,7 @@ public class SaleChanceService extends BaseService<SaleChance, Integer> {
     }
 
 
+    @Transactional(propagation = Propagation.REQUIRED)
     public void deleteSaleChancesByIds(Integer[] ids){
         AssertUtil.isTrue(null == ids || ids.length==0,"请选择待删除的机会数据!");
         AssertUtil.isTrue(deleteBatch(ids)<ids.length,"机会数据删除失败!");

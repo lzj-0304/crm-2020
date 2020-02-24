@@ -4,18 +4,8 @@ layui.use(['form','layuimini','jquery','jquery_cookie'], function () {
         layuimini = layui.layuimini,
         $ = layui.jquery,
         $ = layui.jquery_cookie($);
-
-
     //监听提交
     form.on('submit(saveBtn)', function (data) {
-        console.log(data.field);
-
-        /*var index = layer.alert(JSON.stringify(data.field), {
-            title: '最终的提交信息'
-        }, function () {
-            layer.close(index);
-            layuimini.closeCurrentTab();
-        });*/
         $.ajax({
             type:"post",
             url:ctx+"/user/updatePassword",
@@ -40,7 +30,6 @@ layui.use(['form','layuimini','jquery','jquery_cookie'], function () {
                 }
             }
         });
-
         return false;
     });
 

@@ -79,12 +79,11 @@
     </dependency>
 
 
-    <!-- DevTools 的坐标 -->
-
+    <!-- DevTools 的坐标 热部署 -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-devtools</artifactId>
-      <optional>true</optional>	 <!--当前这个项目被继承之后，这个不向下传递-->
+      <optional>true</optional>
     </dependency>
   </dependencies>
 
@@ -134,6 +133,5 @@
         </configuration>
       </plugin>
     </plugins>
-
   </build>
 </project>

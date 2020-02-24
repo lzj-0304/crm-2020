@@ -46,19 +46,14 @@
 			</a>
 		</div>
 	</script>
+
+
 	<!--操作-->
 	<script id="saleChanceListBar" type="text/html">
 		<a class="layui-btn layui-btn-xs" id="edit" lay-event="edit">编辑</a>
 		<a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="del">删除</a>
 	</script>
 
-
-    <!--操作-->
-    <script type="text/html" id="test">
-        {{#  if(d.state === 0){ }}
-            "<div>未分配</div>"
-        {{#  } }}
-    </script>
 </form>
 <script type="text/javascript" src="${ctx}/static/js/saleChance/sale.chance.js"></script>
 

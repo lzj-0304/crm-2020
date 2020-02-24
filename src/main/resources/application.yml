@@ -4,12 +4,11 @@ server:
   servlet:
     context-path: /crm
 
-
 ## 数据源配置
 spring:
   datasource:
     type: com.mchange.v2.c3p0.ComboPooledDataSource
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/crm01?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
     username: root
     password: root
@@ -21,6 +20,7 @@ spring:
     charset: UTF-8
     template-loader-path: classpath:/views/
 
+  ## 启用热部署
   devtools:
     restart:
       enabled: true

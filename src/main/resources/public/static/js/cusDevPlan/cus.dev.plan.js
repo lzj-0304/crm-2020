@@ -1,9 +1,7 @@
-layui.use(['table','layer',"form", 'element'],function(){
+layui.use(['table','layer'],function(){
     var layer = parent.layer === undefined ? layui.layer : top.layer,
         $ = layui.jquery,
-        table = layui.table,
-        form = layui.form;
-        element= layui.element;
+        table = layui.table;
     //用户列表展示
     var  tableIns = table.render({
         elem: '#saleChanceList',
@@ -12,7 +10,7 @@ layui.use(['table','layer',"form", 'element'],function(){
         page : true,
         height : "full-125",
         limits : [10,15,20,25],
-        limit : 20,
+        limit : 10,
         toolbar: "#toolbarDemo",
         id : "saleChanceListTable",
         cols : [[
@@ -33,7 +31,6 @@ layui.use(['table','layer',"form", 'element'],function(){
             {title: '操作',fixed:"right",align:"center", minWidth:150,templet:"#op"}
         ]]
     });
-
 
     function formatterDevResult(value){
         /**
@@ -56,11 +53,6 @@ layui.use(['table','layer',"form", 'element'],function(){
     }
 
 
-
-
-
-
-
     // 多条件搜索
     $(".search_btn").on("click",function(){
         table.reload("saleChanceListTable",{
@@ -75,19 +67,6 @@ layui.use(['table','layer',"form", 'element'],function(){
         })
     });
 
-    //头工具栏事件
-    table.on('toolbar(saleChances)', function(obj){
-        var checkStatus = table.checkStatus(obj.config.id);
-        switch(obj.event){
-            case "add":
-                openAddOrUpdateSaleChanceDialog();
-                break;
-            case "del":
-                delSaleChance(checkStatus.data);
-                break;
-        };
-    });
-
 
     /**
      * 行监听
@@ -97,70 +76,10 @@ layui.use(['table','layer',"form", 'element'],function(){
         if(layEvent === "dev") {
             openCusDevPlanDialog("计划项数据维护",obj.data.id);
         }else if(layEvent === "info") {
-            openCusDevPlanDialog("计划项数据详情展示",obj.data.id);
+            openCusDevPlanDialog("计划项数据详情",obj.data.id);
         }
 
     });
-
-
-    // 打开添加机会数据页面
-    function openAddOrUpdateSaleChanceDialog(sid){
-        var url  =  ctx+"/sale_chance/addOrUpdateSaleChancePage";
-        var title="营销机会管理-机会添加";
-        if(sid){
-            url = url+"?id="+sid;
-            title="营销机会管理-机会更新";
-        }
-        layui.layer.open({
-            title : title,
-            type : 2,
-            area:["700px","500px"],
-            maxmin:true,
-            content : url
-        });
-    }
-
-
-    /**
-     * 批量删除
-     * @param datas
-     */
-    function delSaleChance(datas) {
-        if(datas.length==0){
-            layer.msg("请选择删除记录!", {icon: 5});
-            return;
-        }
-
-        layer.confirm('确定删除选中的机会数据？', {
-            btn: ['确定','取消'] //按钮
-        }, function(index){
-            layer.close(index);
-            var ids= "ids=";
-            for(var i=0;i<datas.length;i++){
-                if(i<datas.length-1){
-                    ids=ids+datas[i].id+"&ids=";
-                }else {
-                    ids=ids+datas[i].id
-                }
-            }
-            $.ajax({
-                type:"post",
-                url:ctx+"/sale_chance/delete",
-                data:ids,
-                dataType:"json",
-                success:function (data) {
-                    if(data.code==200){
-                        tableIns.reload();
-                    }else{
-                        layer.msg(data.msg, {icon: 5});
-                    }
-                }
-            })
-        });
-
-
-    }
-
 
 
     // 打开开发计划对话框
@@ -168,7 +87,7 @@ layui.use(['table','layer',"form", 'element'],function(){
         layui.layer.open({
             title : title,
             type : 2,
-            area:["700px","500px"],
+            area:["750px","550px"],
             maxmin:true,
             content : ctx+"/cus_dev_plan/toCusDevPlanDataPage?sid="+sid
         });

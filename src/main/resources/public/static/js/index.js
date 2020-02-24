@@ -14,7 +14,6 @@ layui.use(['form','jquery','jquery_cookie'], function () {
             layer.msg('密码不能为空');
             return false;
         }
-
         $.ajax({
             type:"post",
             url:ctx+"/user/login",

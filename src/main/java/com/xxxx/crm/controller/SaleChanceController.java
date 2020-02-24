@@ -76,7 +76,7 @@ public class SaleChanceController extends BaseController {
     @RequestMapping("delete")
     @ResponseBody
     public ResultInfo deleteSaleChance(Integer[] ids){
-        saleChanceService.deleteBatch(ids);
+        saleChanceService.deleteSaleChancesByIds(ids);
         return success("机会数据删除成功");
     }
 

@@ -1,9 +1,7 @@
-layui.use(['table','layer',"form"],function(){
+layui.use(['table','layer'],function(){
     var layer = parent.layer === undefined ? layui.layer : top.layer,
         $ = layui.jquery,
-        table = layui.table,
-        form = layui.form;
-
+        table = layui.table;
     //用户列表展示
     var  tableIns = table.render({
         elem: '#saleChanceList',
@@ -12,7 +10,7 @@ layui.use(['table','layer',"form"],function(){
         page : true,
         height : "full-125",
         limits : [10,15,20,25],
-        limit : 20,
+        limit : 10,
         toolbar: "#toolbarDemo",
         id : "saleChanceListTable",
         cols : [[
@@ -93,9 +91,6 @@ layui.use(['table','layer',"form"],function(){
             case "del":
                 delSaleChance(checkStatus.data);
                 break;
-            case "relationRole":
-                openRelationRoleDialog(checkStatus.data);
-                break;
         };
     });
 
@@ -133,7 +128,7 @@ layui.use(['table','layer',"form"],function(){
         layui.layer.open({
             title : title,
             type : 2,
-            area:["700px","500px"],
+            area:["700px","560px"],
             maxmin:true,
             content : url
         });
@@ -149,7 +144,6 @@ layui.use(['table','layer',"form"],function(){
             layer.msg("请选择删除记录!", {icon: 5});
             return;
         }
-
         layer.confirm('确定删除选中的机会数据？', {
             btn: ['确定','取消'] //按钮
         }, function(index){
@@ -176,8 +170,6 @@ layui.use(['table','layer',"form"],function(){
                 }
             })
         });
-
-
     }
 
 

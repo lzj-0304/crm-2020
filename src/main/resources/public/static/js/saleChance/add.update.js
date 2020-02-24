@@ -3,8 +3,6 @@ layui.use(['form', 'layer'], function () {
         layer = parent.layer === undefined ? layui.layer : top.layer,
         $ = layui.jquery;
 
-
-
     $.post(ctx+"/user/queryAllCustomerManager",function (res) {
         for (var i = 0; i < res.length; i++) {
             if($("input[name='man']").val() == res[i].id ){
@@ -12,7 +10,6 @@ layui.use(['form', 'layer'], function () {
             }else {
                 $("#assignMan").append("<option value=\"" + res[i].id + "\">" + res[i].name + "</option>");
             }
-
         }
         //重新渲染
         layui.form.render("select");

@@ -1,10 +1,8 @@
-layui.use(['table','layer',"form", 'element'],function(){
+layui.use(['table','layer'],function(){
     var layer = parent.layer === undefined ? layui.layer : top.layer,
         $ = layui.jquery,
-        table = layui.table,
-        form = layui.form;
-        element= layui.element;
-    //用户列表展示
+        table = layui.table;
+    //计划项数据展示
     var  tableIns = table.render({
         elem: '#cusDevPlanList',
         url : ctx+'/cus_dev_plan/list?sid='+$("input[name='id']").val(),
@@ -28,19 +26,46 @@ layui.use(['table','layer',"form", 'element'],function(){
     });
 
 
+    //头工具栏事件
+    table.on('toolbar(cusDevPlans)', function(obj){
+        switch(obj.event){
+            case "add":
+                openAddOrUpdateCusDevPlanDialog();
+                break;
+            case "success":
+                updateSaleChanceDevResult($("input[name='id']").val(),2);
+                break;
+            case "failed":
+                updateSaleChanceDevResult($("input[name='id']").val(),3);
+                break;
+        };
+    });
 
 
 
     /**
      * 行监听
      */
-    table.on("tool(customerOrders)", function(obj){
+    table.on("tool(cusDevPlans)", function(obj){
         var layEvent = obj.event;
-        if(layEvent === "info") {
+        if(layEvent === "edit") {
             openAddOrUpdateCusDevPlanDialog(obj.data.id);
+        }else if(layEvent === "del") {
+            layer.confirm('确定删除当前数据？', {icon: 3, title: "开发计划管理"}, function (index) {
+                $.post(ctx+"/cus_dev_plan/delete",{id:obj.data.id},function (data) {
+                    if(data.code==200){
+                        layer.msg("操作成功！");
+                        tableIns.reload();
+                    }else{
+                        layer.msg(data.msg, {icon: 5});
+                    }
+                });
+            })
         }
 
     });
+
+
     // 打开添加计划项数据页面
     function openAddOrUpdateCusDevPlanDialog(id){
         var url  =  ctx+"/cus_dev_plan/addOrUpdateCusDevPlanPage?sid="+$("input[name='id']").val();
@@ -60,19 +85,6 @@ layui.use(['table','layer',"form", 'element'],function(){
 
 
 
-
-
-
-    // 打开开发计划对话框
-    function openCusDevPlanDialog(title,sid){
-        layui.layer.open({
-            title : title,
-            type : 2,
-            area:["700px","500px"],
-            maxmin:true,
-            content : ctx+"/cus_dev_plan/toCusDevPlanDataPage?sid="+sid
-        });
-    }
 
 
     function updateSaleChanceDevResult(sid,devResult) {

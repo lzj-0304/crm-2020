@@ -86,6 +86,7 @@ public class CustomerController extends BaseController {
 
 
 
+    // 折线图接口地址
     @RequestMapping("countCustomerMake")
     @ResponseBody
     public Map<String,Object> countCustomerMake(){
@@ -93,6 +94,7 @@ public class CustomerController extends BaseController {
     }
 
 
+    // 饼状图接口地址
     @RequestMapping("countCustomerMake02")
     @ResponseBody
     public Map<String,Object> countCustomerMake02(){

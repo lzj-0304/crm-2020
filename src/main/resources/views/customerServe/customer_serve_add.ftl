@@ -40,10 +40,7 @@
             <textarea placeholder="请输入服务信息" name="overview" class="layui-textarea"></textarea>
         </div>
     </div>
-
-
     </div>
-
 
     <br/>
     <div class="layui-form-item layui-row layui-col-xs12">

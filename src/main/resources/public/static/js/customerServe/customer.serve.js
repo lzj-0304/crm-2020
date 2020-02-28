@@ -18,7 +18,7 @@ layui.use(['table','layer',"form"],function(){
             {type: "checkbox", fixed:"left", width:50},
             {field: "id", title:'编号',fixed:"true", width:80},
             {field: 'customer', title: '客户名', minWidth:50, align:"center"},
-            {field: 'serveType', title: '服务类型', minWidth:100, align:'center'},
+            {field: 'dicValue', title: '服务类型', minWidth:100, align:'center'},
             {field: 'overview', title: '概要信息', align:'center'},
             {field: 'createPeople', title: '创建人', minWidth:100, align:'center'},
             {field: 'createDate', title: '创建时间', align:'center',minWidth:150},
@@ -50,7 +50,7 @@ layui.use(['table','layer',"form"],function(){
     });
 
 
-    // 打开添加用户页面
+    // 打开服务创建页面
     function openAddCustomerServeDialog(){
         var url  =  ctx+"/customer_serve/addCustomerServePage";
         layui.layer.open({

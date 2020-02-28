@@ -48,6 +48,16 @@ public class CustomerServe {
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createDate;
 
+    private String dicValue;
+
+    public String getDicValue() {
+        return dicValue;
+    }
+
+    public void setDicValue(String dicValue) {
+        this.dicValue = dicValue;
+    }
+
     public Integer getId() {
         return id;
     }

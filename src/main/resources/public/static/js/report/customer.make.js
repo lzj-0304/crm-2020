@@ -2,40 +2,6 @@ layui.use(['layer', 'layuimini','echarts'], function () {
     var $ = layui.jquery,
         echarts = layui.echarts;
 
-    /**
-     * 报表功能
-     */
-    /*$.ajax({
-        type:"post",
-        url:ctx+"/customer/countCustomerMake",
-        dataType:"json",
-        success:function (data) {
-            // 基于准备好的dom，初始化echarts实例
-            var myChart = echarts.init(document.getElementById('make'));
-            // 指定图表的配置项和数据
-            var option = {
-                title: {
-                    text: 'CRM 客户构成分析'
-                },
-                tooltip: {},
-                legend: {
-                    data:['数量']
-                },
-                xAxis: {
-                    data: data.data1
-                },
-                yAxis: {},
-                series: [{
-                    name: '数量',
-                    type: 'bar',
-                    data:data.data2
-                }]
-            };
-            // 使用刚指定的配置项和数据显示图表。
-            myChart.setOption(option);
-        }
-    });*/
-
 
     $.ajax({
         type:"post",

@@ -18,7 +18,7 @@ layui.use(['table','layer',"form"],function(){
             {type: "checkbox", fixed:"left", width:50},
             {field: "id", title:'编号',fixed:"true", width:80},
             {field: 'customer', title: '客户名', minWidth:50, align:"center"},
-            {field: 'serveType', title: '服务类型', minWidth:100, align:'center'},
+            {field: 'dicValue', title: '服务类型', minWidth:100, align:'center'},
             {field: 'overview', title: '概要信息', align:'center'},
             {field: 'createPeople', title: '创建人', minWidth:100, align:'center'},
             {field: 'assignTime', title: '分配时间', minWidth:50, align:"center"},

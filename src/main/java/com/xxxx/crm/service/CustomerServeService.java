@@ -9,6 +9,8 @@ import com.xxxx.crm.vo.CustomerServe;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 
@@ -21,6 +23,7 @@ public class CustomerServeService extends BaseService<CustomerServe,Integer> {
     @Autowired
     private UserMapper userMapper;
 
+    @Transactional(propagation = Propagation.REQUIRED)
     public void saveOrUpdateCustomerServe(CustomerServe customerServe){
 
         if(null == customerServe.getId()){

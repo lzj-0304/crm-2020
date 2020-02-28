@@ -139,6 +139,7 @@ public class CustomerService extends BaseService<Customer,Integer> {
 
 
 
+    // 折线图数据处理
     public Map<String,Object> countCustomerMake(){
         Map<String,Object> result=new HashMap<String,Object>();
         List<Map<String,Object>> list =customerMapper.countCustomerMake();
@@ -154,6 +155,7 @@ public class CustomerService extends BaseService<Customer,Integer> {
     }
 
 
+    // 饼状图数据处理
     public Map<String,Object> countCustomerMake02(){
         Map<String,Object> result=new HashMap<String,Object>();
         List<Map<String,Object>> list =customerMapper.countCustomerMake();

@@ -196,11 +196,11 @@
   </update>
 
 
-  <select id="selectByParams" parameterType="com.xxxx.crm.query.CustomerServeQuery" resultMap="BaseResultMap">
-       select <include refid="Base_Column_List"/>
-       from t_customer_serve
+  <select id="selectByParams" parameterType="com.xxxx.crm.query.CustomerServeQuery" resultType="com.xxxx.crm.vo.CustomerServe">
+        select c.*,d.data_dic_value as dic_value
+        from t_customer_serve c left join t_datadic d on c.serve_type = d.id
        <where>
-            is_valid=1
+            c.is_valid=1
             <if test="null !=customer and customer!=''">
                  and customer like concat('%',#{customer},'%')
             </if>

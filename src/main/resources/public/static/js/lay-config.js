@@ -22,5 +22,6 @@ layui.config({
     wangEditor: 'wangEditor/wangEditor', // wangEditor富文本扩展
     layarea: 'layarea/layarea', //  省市县区三级联动下拉选择器
     jquery_cookie:'jquery-cookie/jquery.cookie',
-    bodyTab: "body/bodyTab"
+    bodyTab: "body/bodyTab",
+    formSelects:"formSelects/formSelects-v4"
 });

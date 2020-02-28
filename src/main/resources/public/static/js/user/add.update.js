@@ -1,8 +1,3 @@
-layui.config({
-    base : ctx+"/static/js/"
-}).extend({
-    "formSelects":"formSelects-v4"
-});
 layui.use(['form', 'layer','formSelects'], function () {
     var form = layui.form,
         layer = parent.layer === undefined ? layui.layer : top.layer,

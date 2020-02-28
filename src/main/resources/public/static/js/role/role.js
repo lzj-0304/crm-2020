@@ -1,8 +1,7 @@
-layui.use(['table','layer',"form"],function(){
+layui.use(['table','layer'],function(){
        var layer = parent.layer === undefined ? layui.layer : top.layer,
         $ = layui.jquery,
         table = layui.table;
-
     //角色列表展示
     var  tableIns = table.render({
         elem: '#roleList',
@@ -11,7 +10,7 @@ layui.use(['table','layer',"form"],function(){
         page : true,
         height : "full-125",
         limits : [10,15,20,25],
-        limit : 20,
+        limit : 10,
         toolbar: "#toolbarDemo",
         id : "roleListTable",
         cols : [[
@@ -37,13 +36,13 @@ layui.use(['table','layer',"form"],function(){
         })
     });
 
+
     //头工具栏事件
     table.on('toolbar(roles)', function(obj){
         var checkStatus = table.checkStatus(obj.config.id);
         switch(obj.event){
             case "add":
                 openAddOrUpdateRoleDialog();
-                break;
                 break;
             case "grant":
                 openAddGrantDailog(checkStatus.data);
@@ -90,12 +89,6 @@ layui.use(['table','layer',"form"],function(){
             content : url
         });
     }
-
-
-
-
-
-
 
     function openAddGrantDailog(datas){
         if(datas.length==0){

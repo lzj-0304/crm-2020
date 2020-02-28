@@ -5,7 +5,6 @@
 	<#include "../common.ftl">
 </head>
 <body class="childrenBody">
-
 <form class="layui-form" >
 	<blockquote class="layui-elem-quote quoteBox">
 		<form class="layui-form">
@@ -29,7 +28,6 @@
 		</form>
 	</blockquote>
 	<table id="userList" class="layui-table"  lay-filter="users"></table>
-
 
 	<script type="text/html" id="toolbarDemo">
 		<div class="layui-btn-container">

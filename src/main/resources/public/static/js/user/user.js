@@ -1,9 +1,7 @@
 layui.use(['table','layer',"form"],function(){
        var layer = parent.layer === undefined ? layui.layer : top.layer,
         $ = layui.jquery,
-        table = layui.table,
-        form = layui.form;
-
+        table = layui.table;
     //用户列表展示
     var  tableIns = table.render({
         elem: '#userList',
@@ -12,7 +10,7 @@ layui.use(['table','layer',"form"],function(){
         page : true,
         height : "full-125",
         limits : [10,15,20,25],
-        limit : 20,
+        limit : 10,
         toolbar: "#toolbarDemo",
         id : "userListTable",
         cols : [[
@@ -42,6 +40,7 @@ layui.use(['table','layer',"form"],function(){
             }
         })
     });
+
 
     //头工具栏事件
     table.on('toolbar(users)', function(obj){

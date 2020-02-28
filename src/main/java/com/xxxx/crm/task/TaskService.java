@@ -18,6 +18,6 @@ public class TaskService {
     @Scheduled(cron = "0/2 * * * * ?")
     public void job(){
         System.out.println("定时任务开始执行-->"+new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
-        //customerService.updateCustomerState();
+        customerService.updateCustomerState();
     }
 }

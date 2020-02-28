@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>用户管理</title>
+	<title>角色管理</title>
 	<#include "../common.ftl">
 </head>
 <body class="childrenBody">
@@ -21,7 +21,6 @@
 		</form>
 	</blockquote>
 	<table id="roleList" class="layui-table"  lay-filter="roles"></table>
-
 
 	<script type="text/html" id="toolbarDemo">
 		<div class="layui-btn-container">

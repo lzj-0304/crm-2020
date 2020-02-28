@@ -94,8 +94,6 @@ public class RoleService extends BaseService<Role,Integer> {
             }
             permissionMapper.insertBatch(permissions);
         }
-
-
     }
 
 

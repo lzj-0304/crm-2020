@@ -13,5 +13,4 @@
 </script>
 <script type="text/javascript" src="${ctx}/static/js/role/grant.js"></script>
 </body>
-
 </html>

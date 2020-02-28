@@ -1,11 +1,10 @@
 layui.use(['table', 'treetable'], function () {
     var $ = layui.jquery;
     var table = layui.table;
-    var treetable = layui.treetable;
+    var treeTable = layui.treetable;
 
     // 渲染表格
-    layer.load(2);
-    treetable.render({
+    treeTable.render({
         treeColIndex: 1,
         treeSpid: -1,
         treeIdName: 'id',
@@ -14,7 +13,7 @@ layui.use(['table', 'treetable'], function () {
         url: ctx+'/module/list',
         toolbar: "#toolbarDemo",
         treeDefaultClose:true,
-        page: false,
+        page: true,
         cols: [[
             {type: 'numbers'},
             {field: 'moduleName', minWidth: 100, title: '菜单名称'},
@@ -73,13 +72,12 @@ layui.use(['table', 'treetable'], function () {
     table.on('toolbar(munu-table)', function(obj){
         switch(obj.event){
             case "expand":
-                treetable.expandAll('#munu-table');
+                treeTable.expandAll('#munu-table');
                 break;
             case "fold":
-                treetable.foldAll('#munu-table');
+                treeTable.foldAll('#munu-table');
                 break;
             case "add":
-
                 openAddModuleDialog(0,-1);
                 break;
         };

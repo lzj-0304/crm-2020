@@ -2,7 +2,7 @@
 <html>
 <head>
     <#include "../common.ftl">
-    <link rel="stylesheet" href="${ctx}/static/css/formSelects-v4.css" media="all">
+
 </head>
 <body class="childrenBody">
 <form class="layui-form" style="width:80%;">

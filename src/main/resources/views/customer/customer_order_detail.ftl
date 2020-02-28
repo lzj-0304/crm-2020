@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>客户开发计划管理</title>
+    <title>订单详情查看</title>
     <#include "../common.ftl">
 </head>
 <body class="childrenBody">

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>用户管理</title>
+    <title>资源管理</title>
     <#include "../common.ftl">
 </head>
 <body class="childrenBody">
@@ -14,7 +14,7 @@
         <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
     </script>
 
-    <script type="text/javascript" src="${ctx}/static/js/module/module.js"></script>
+
 
     <script type="text/html" id="toolbarDemo">
         <div class="layui-btn-container">
@@ -32,5 +32,7 @@
             </a>
         </div>
     </script>
+
+    <script type="text/javascript" src="${ctx}/static/js/module/module.js"></script>
 </body>
 </html>

@@ -47,8 +47,6 @@
 		{{# } }}
 	</script>
 
-
-
 </form>
 <script type="text/javascript" src="${ctx}/static/js/customerLoss/customer.loss.js"></script>
 

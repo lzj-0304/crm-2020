@@ -149,15 +149,13 @@ public class UserService  extends BaseService<User,Integer> {
          *   原始角色存在     清空所有角色
          *   原始角色存在     移除部分角色
          * 如何进行角色分配???
-         *  如果用户原始角色存在  首先清空原始所有角色
-         *  添加新的角色记录到用户角色表
+         *  如果用户原始角色存在  首先清空原始所有角色  添加新的角色记录到用户角色表
          */
 
         int count = userRoleMapper.countUserRoleByUserId(useId);
         if (count > 0) {
             AssertUtil.isTrue(userRoleMapper.deleteUserRoleByUserId(useId) != count, "用户角色分配失败!");
         }
-
         if (StringUtils.isNotBlank(roleIds)) {
             //重新添加新的角色
             List<UserRole> userRoles = new ArrayList<UserRole>();
@@ -222,10 +220,8 @@ public class UserService  extends BaseService<User,Integer> {
         if (count > 0) {
             AssertUtil.isTrue(userRoleMapper.deleteUserRoleByUserId(userId) != count, "用户角色删除失败!");
         }
-
         user.setIsValid(0);
         AssertUtil.isTrue(updateByPrimaryKeySelective(user) < 1, "用户记录删除失败!");
-
 
     }
 

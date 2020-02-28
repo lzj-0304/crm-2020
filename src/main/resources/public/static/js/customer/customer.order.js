@@ -1,8 +1,7 @@
-layui.use(['table','layer',"form"],function(){
+layui.use(['table','layer'],function(){
     var layer = parent.layer === undefined ? layui.layer : top.layer,
         $ = layui.jquery,
-        table = layui.table,
-        form = layui.form;
+        table = layui.table;
     //订单列表展示
     var  tableIns = table.render({
         elem: '#customerOrderList',

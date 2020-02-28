@@ -2,8 +2,6 @@ var zTreeObj;
 $(function () {
     loadModuleInfo();
 });
-
-
 function loadModuleInfo() {
     $.ajax({
         type:"post",

@@ -55,7 +55,7 @@
 	</script>
 
 </form>
-<script type="text/javascript" src="${ctx}/static/js/saleChance/sale.chance.js"></script>
+<script type="text/javascript" src="${ctx}/js/saleChance/sale.chance.js"></script>
 
 </body>
 </html>

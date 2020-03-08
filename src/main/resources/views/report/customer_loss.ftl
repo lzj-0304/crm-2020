@@ -33,7 +33,7 @@
 
 
 </form>
-<script type="text/javascript" src="${ctx}/static/js/report/customer.loss.js"></script>
+<script type="text/javascript" src="${ctx}/js/report/customer.loss.js"></script>
 
 </body>
 </html>

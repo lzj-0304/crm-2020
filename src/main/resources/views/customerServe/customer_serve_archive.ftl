@@ -36,7 +36,7 @@
     </script>
 
 </form>
-<script type="text/javascript" src="${ctx}/static/js/customerServe/customer.serve.archive.js"></script>
+<script type="text/javascript" src="${ctx}/js/customerServe/customer.serve.archive.js"></script>
 
 </body>
 </html>

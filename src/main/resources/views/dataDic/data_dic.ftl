@@ -38,7 +38,7 @@
 		<a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="del">删除</a>
 	</script>
 </form>
-<script type="text/javascript" src="${ctx}/static/js/dataDic/data.dic.js"></script>
+<script type="text/javascript" src="${ctx}/js/dataDic/data.dic.js"></script>
 
 </body>
 </html>

@@ -15,6 +15,6 @@
         <div class="layui-card-body" id="make02" style="width: 100%;min-height:500px"></div>
     </div>
 
-    <script type="text/javascript" src="${ctx}/static/js/report/customer.make.js"></script>
+    <script type="text/javascript" src="${ctx}/js/report/customer.make.js"></script>
 </body>
 </html>

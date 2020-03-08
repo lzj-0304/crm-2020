@@ -49,7 +49,7 @@
 	</script>
 
 </form>
-<script type="text/javascript" src="${ctx}/static/js/cusDevPlan/cus.dev.plan.js"></script>
+<script type="text/javascript" src="${ctx}/js/cusDevPlan/cus.dev.plan.js"></script>
 
 </body>
 </html>

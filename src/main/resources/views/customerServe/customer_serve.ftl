@@ -40,7 +40,7 @@
     </script>
 
 </form>
-<script type="text/javascript" src="${ctx}/static/js/customerServe/customer.serve.js"></script>
+<script type="text/javascript" src="${ctx}/js/customerServe/customer.serve.js"></script>
 
 </body>
 </html>

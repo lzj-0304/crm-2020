@@ -10,7 +10,7 @@
     <div class="layui-header header">
         <div class="layui-logo">
             <a href="">
-                <img src="static/images/logo.png" alt="logo">
+                <img src="images/logo.png" alt="logo">
                 <h1>CRM-智能办公</h1>
             </a>
         </div>
@@ -187,6 +187,6 @@
 
 </div>
 
-<script type="text/javascript" src="${ctx}/static/js/main.js"></script>
+<script type="text/javascript" src="${ctx}/js/main.js"></script>
 </body>
 </html>

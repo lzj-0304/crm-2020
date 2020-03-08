@@ -53,6 +53,6 @@
 </div>
 
 
-<script type="text/javascript" src="${ctx}/static/js/customer/customer.order.details.js"></script>
+<script type="text/javascript" src="${ctx}/js/customer/customer.order.details.js"></script>
 </body>
 </html>

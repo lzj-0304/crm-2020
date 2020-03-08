@@ -94,6 +94,6 @@
 		</script>
 	</#if>
 
-	<script type="text/javascript" src="${ctx}/static/js/cusDevPlan/cus.dev.plan.data.js"></script>
+	<script type="text/javascript" src="${ctx}/js/cusDevPlan/cus.dev.plan.data.js"></script>
 </body>
 </html>

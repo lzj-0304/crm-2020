@@ -41,7 +41,7 @@
     </script>
 
 </form>
-<script type="text/javascript" src="${ctx}/static/js/customerServe/customer.serve.proce.js"></script>
+<script type="text/javascript" src="${ctx}/js/customerServe/customer.serve.proce.js"></script>
 
 </body>
 </html>

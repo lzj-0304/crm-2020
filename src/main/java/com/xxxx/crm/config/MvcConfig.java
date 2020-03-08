@@ -18,6 +18,6 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(noLoginInterceptor())
                 .addPathPatterns("/**")
-                .excludePathPatterns("/user/login","/index","/static/**");
+                .excludePathPatterns("/user/login","/index","/**");
     }
 }

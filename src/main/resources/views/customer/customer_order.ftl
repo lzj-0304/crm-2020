@@ -58,6 +58,6 @@
 	<script id="customerOrderListBar" type="text/html">
 		<a class="layui-btn layui-btn-xs"  lay-event="info">订单详情</a>
 	</script>
-	<script type="text/javascript" src="${ctx}/static/js/customer/customer.order.js"></script>
+	<script type="text/javascript" src="${ctx}/js/customer/customer.order.js"></script>
 </body>
 </html>

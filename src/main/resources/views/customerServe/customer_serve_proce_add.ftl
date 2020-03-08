@@ -86,6 +86,6 @@
         </div>
     </div>
 </form>
-<script type="text/javascript" src="${ctx}/static/js/customerServe/customer.serve.proce.add.js"></script>
+<script type="text/javascript" src="${ctx}/js/customerServe/customer.serve.proce.add.js"></script>
 </body>
 </html>

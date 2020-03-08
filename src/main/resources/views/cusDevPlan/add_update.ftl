@@ -47,6 +47,6 @@
         </div>
     </div>
 </form>
-<script type="text/javascript" src="${ctx}/static/js/cusDevPlan/add.update.js"></script>
+<script type="text/javascript" src="${ctx}/js/cusDevPlan/add.update.js"></script>
 </body>
 </html>

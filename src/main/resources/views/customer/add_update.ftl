@@ -174,6 +174,6 @@
         </div>
     </div>
 </form>
-<script type="text/javascript" src="${ctx}/static/js/customer/add.update.js"></script>
+<script type="text/javascript" src="${ctx}/js/customer/add.update.js"></script>
 </body>
 </html>

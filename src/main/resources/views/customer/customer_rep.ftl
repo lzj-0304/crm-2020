@@ -80,6 +80,6 @@
 
 
 
-	<script type="text/javascript" src="${ctx}/static/js/customerLoss/customer.rep.js"></script>
+	<script type="text/javascript" src="${ctx}/js/customerLoss/customer.rep.js"></script>
 </body>
 </html>

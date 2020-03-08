@@ -63,7 +63,7 @@
 
 
 </form>
-<script type="text/javascript" src="${ctx}/static/js/customer/customer.js"></script>
+<script type="text/javascript" src="${ctx}/js/customer/customer.js"></script>
 
 </body>
 </html>
